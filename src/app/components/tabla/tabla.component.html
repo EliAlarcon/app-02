@@ -1,0 +1,53 @@
+<h1>INTERPOLACIÓN</h1>
+
+<h5>Nombre: {{nombre}}</h5>
+<h5>Edad: {{edad}}</h5>
+<hr>
+<hr>
+<button class="btn btn-primary" (click)="cambiar()">FOR / IF</button>
+
+<div *ngIf="temp ; else mostrarIf">
+    <h1>DIRECTIVA (for)</h1>
+    <h6>{{peliculas[1].titulo}} {{peliculas[1].anio}}</h6>
+
+    <p *ngFor="let pelicula of peliculas">
+        {{pelicula.titulo}} ||
+        {{pelicula.genero}} ||
+        {{pelicula.anio}}
+    </p>
+
+    {{peliculas | json}}
+    <hr>
+    <table class="table table-bordered table-sm">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Género</th>
+                <th>Año</th>
+                <th>Portada</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pelicula of peliculas">
+                <td>{{pelicula.titulo}}</td>
+                <td>{{pelicula.genero}}</td>
+                <td>{{pelicula.anio}}</td>
+                <td>
+                    <img src="{{pelicula.imagen}}" class="portada">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<hr>
+<ng-template #mostrarIf>
+    <h1>DIRECTIVA (if)</h1>
+
+    <div *ngIf="mostrar==true; else noExiste">
+        <h3>HOLA MUNDO</h3>
+    </div>
+
+    <ng-template #noExiste>
+        <h3>ERROR DESCONOCIDO</h3>
+    </ng-template>
+</ng-template>

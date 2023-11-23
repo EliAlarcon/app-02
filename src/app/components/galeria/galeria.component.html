@@ -1,0 +1,12 @@
+<div class="row">
+    <div *ngFor="let cuenta of imagenes" class="col-md-4">
+      <div class="thumbnail">
+        <a href="{{cuenta.url}}">
+          <img src="{{cuenta.url}}" alt="Lights" style="width:50%">
+          <div class="caption">
+            <p>{{cuenta.descripcion}}</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>

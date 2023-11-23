@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app-ejercicio2';
+
+  temp = true;
+
+  tablaProducto(){
+    this.temp = !this.temp
+  }
 }
